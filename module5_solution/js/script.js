@@ -73,14 +73,21 @@ $(function () {
 		$ajaxUtils.sendGetRequest(
 			homeHtmlUrl,
 			function (homeHtml) {
-				var chosenCategoryShortName = chooseRandomCategory(categories);
+				var chosenCategoryShortName = chooseRandomCategory(categories)
+					.short_name;
+				chosenCategoryShortName = "'" + chosenCategoryShortName + "'";
 				var homeHtmlToInsertIntoMainPage = insertProperty(
 					homeHtml,
-					"chosenCategoryShortName",
-					chosen
+					"randomCategoryShortName",
+					chosenCategoryShortName
 				);
-				var chosen = chosenCategoryShortName.short_name;
-				chosen = "{{" + chosen + "}}";
+				// var homeHtmlToInsertIntoMainPage = insertProperty(
+				// 	homeHtml,
+				// 	"chosenCategoryShortName",
+				// 	chosen
+				// );
+				// var chosen = chosenCategoryShortName.short_name;
+				// chosen = "{{" + chosen + "}}";
 				insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 			},
 			false
