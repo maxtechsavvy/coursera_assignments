@@ -81,13 +81,6 @@ $(function () {
 					"randomCategoryShortName",
 					chosenCategoryShortName
 				);
-				// var homeHtmlToInsertIntoMainPage = insertProperty(
-				// 	homeHtml,
-				// 	"chosenCategoryShortName",
-				// 	chosen
-				// );
-				// var chosen = chosenCategoryShortName.short_name;
-				// chosen = "{{" + chosen + "}}";
 				insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 			},
 			false
